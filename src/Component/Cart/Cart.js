@@ -6,7 +6,6 @@ const Cart = (props) => {
     cartItems.map(x => {
         total = total + x.price
     });
-    console.log(cartItems);
     return (
             <div className="cart-box">
                 <div>
