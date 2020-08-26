@@ -5,7 +5,7 @@ const Nav = () => {
         <div>
             <section className="container">
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <a href="..." className="navbar-brand"><img src={Logo} alt=""/></a>
+                    <a href="#" className="navbar-brand"><img src={Logo} alt=""/></a>
                     
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

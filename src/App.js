@@ -7,32 +7,38 @@ import Books from './Component/Books/Books';
 import Testimonial from './Component/Testimonial/Testimonial';
 import Footer from './Component/Footer/Footer';
 import Course from './Component/Course/Course';
-
+import FakeData from './FakeData/fakeData.js'
+import { useState } from 'react';
+import Cart from './Component/Cart/Cart';
 function App() {
+  const [course, setCourse] = useState(FakeData);
+  const [cart, setCart] = useState([]);
+  const enroleBtnhandler = (course) => {
+    const newCart = [...cart, course]
+    setCart(newCart);
+  }
+
   return (
     <div>
       <section className="hero-area">
         <Nav></Nav>
         <Hero></Hero>          
       </section>
+      <Cart courses = {cart}></Cart>
       <Books></Books>
+
       <section className="container" id="courses">
         <h3 className="section-heading">Online Courses</h3>
         <div className="row">
-            <Course></Course>
-            <Course></Course>
-            <Course></Course>
-            <Course></Course>
-            <Course></Course>
-            <Course></Course>
-            <Course></Course>
+            {
+              course.map(x => <Course btn={enroleBtnhandler} key={x.id} data ={x}></Course>)
+            }
         </div>
       </section>
-    <Testimonial></Testimonial>
-    <Footer></Footer>
 
+      <Testimonial></Testimonial>
+      <Footer></Footer>
 
-      
     </div>
   );
 }

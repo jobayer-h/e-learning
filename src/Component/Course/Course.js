@@ -1,15 +1,18 @@
 import React from 'react';
-import img from '../../imgs/Photos/Morder pyschology.png';
-const Course = () => {
+const Course = (props) => {
+    const courseData = props.data;
+    const {name,instructor, price, image, topic} = courseData;
     return (
         <div className="col-md-4 col-12 col-sm-6">
             <div className="course-box">
                 <div className="card">
-                    <img src={img} className="card-img-top" alt="..."></img>
+                    <img src={image} className="card-img-top" alt="..."></img>
                     <div className="card-body">
-                    <h5 className="card-title">Modern Psychology</h5>
-                    <p className="card-text">Designation</p>
-                    <button className="button buy-course">Buy Course</button>
+                    <h5 className="card-title">{name}</h5>
+                    <h5 className="card-title">${price}</h5>
+                    <p className="card-text">By {instructor}</p>
+                    <p className="card-text">Catagory: {topic}</p>
+                    <button onClick={() =>props.btn(courseData)} className="button buy-course">Enrole Now</button>
                     </div>
                     <div className="card-footer d-flex justify-content-between">
                         <i className="fa fa-calendar" aria-hidden="true"> Start 20  April, 2021</i>
