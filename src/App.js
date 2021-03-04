@@ -10,6 +10,9 @@ import Course from './Component/Course/Course';
 import FakeData from './FakeData/fakeData.js'
 import { useState } from 'react';
 import Cart from './Component/Cart/Cart';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 function App() {
   const [course, setCourse] = useState(FakeData);
   const [cart, setCart] = useState([]);
