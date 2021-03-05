@@ -158,3 +158,6 @@ footer p{
     text-align: center;
     margin-bottom: 0;
 }
+.navbar-toggler{
+    border: none;
+}
